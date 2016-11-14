@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
         button!.backgroundColor = UIColor.whiteColor()
         button!.setTitle("PRESS", forState: .Normal)
         button!.setTitleColor(UIColor.redColor(), forState: .Normal)
-        button!.addTarget(self, action:"changeColor", forControlEvents: .TouchUpInside)
+        button!.addTarget(self, action: "changeColor", forControlEvents: .TouchUpInside)
         subView!.addSubview(button!)
         self.view.addSubview(subView!)
         self.view.addSubview(subView2!)
@@ -43,7 +43,7 @@ class DetailViewController: UIViewController {
     }
 
     
-    func changeColor(sender:UIButton){
+    func changeColor(){
         subView2!.backgroundColor = UIColor.blueColor()
     }
 
