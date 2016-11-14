@@ -12,9 +12,32 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tabBarController: UITabBarController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        
+        
+        let firstViewController : UIViewController = ViewController()
+        let secondViewController : UIViewController = DetailViewController()
+        
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([firstViewController,secondViewController], animated: true)
+        tabBarController.tabBar.tintColor = UIColor.orangeColor()
+        
+        firstViewController.tabBarItem = UITabBarItem.init(title: "Main", image: nil, selectedImage: nil)
+        secondViewController.tabBarItem = UITabBarItem.init(title: "Detail", image: nil, selectedImage: nil)
+        
+    
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
+        
+        
         // Override point for customization after application launch.
         return true
     }
